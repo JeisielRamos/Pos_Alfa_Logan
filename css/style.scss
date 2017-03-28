@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans');
+
+$texto: "Open Sans", Tahoma, Verdana;
+$titulo: "Fjalla One", Arial;
+$cor_preto: #000;
+$cor_vermelho: #F00;
+$cor_cinza: #CCC;
+$cor_branco: #FFF;
+$transicao: all 0.5s;
+
+@mixin texto(){
+	font: 1.2em $texto;
+	color: $cor_branco;
+}
+
+/* --- TAGS --- */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body {
+	background: linear-gradient(to top, $cor_branco,$cor_cinza) fixed;
+}
+.no-cssgradients body{
+	background: #333;
+}
+
+header {
+	background: $cor_preto;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 1000;
+	& nav {
+		float: right;
+		margin-top: 13px;
+		& ul li {
+			display: inline;
+			list-style: none;
+			& a {
+				@include texto();
+				text-decoration: none;
+				text-transform: uppercase;
+				margin-left: 13px;
+				transition: $transicao;
+				&:hover {
+					color: $cor_vermelho;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+footer {
+	width: 100%;
+	background: $cor_preto;
+	padding: 20px 0px;
+	& a {
+		font-size: 2.5em;
+		color: $cor_cinza;
+		text-decoration: none;
+		transition: $transicao;
+		&:hover {
+			color: $cor_vermelho;
+		}
+	}
+	& p {
+		@include texto();
+	}
+}
+/* --- CLASS --- */
+.img {
+	width: 85%;
+	background: $cor_branco;
+	padding: 10px;
+	box-shadow: 2px 2px 2px $cor_cinza;
+	transform: rotate(-2deg);
+}
+.col1 {
+	width: 25%;
+}
+.col2 {
+	width: 70%;
+}
+.top {
+	padding-top: 70px;
+}
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.center {
+	text-align: center;
+}
+.clear {
+	clear: both;
+}
+.texto {
+	position: absolute;
+	top: 200px;
+	color: $cor_branco;
+	font-family: $titulo;
+	left: 30px;
+	text-shadow: 2px 2px 1px $cor_preto;
+	& p {
+		font-size: 1.4em;
+		margin-bottom: 10px;
+	}
+	& h1 {
+		font-size: 3em;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+	& .btn {
+		border: 1px solid $cor_branco;
+		padding: 5px;
+		transition: $transicao;
+		text-shadow: 0 0 0 transparent;
+		color: $cor_branco;
+		text-decoration: none;
+		&:hover {
+			background: $cor_branco;
+			color: $cor_preto;
+			
+		}
+	}
+}
+.container {
+	width: 1000px;
+	margin: auto;
+	& h1 {
+		font: 3em $titulo;
+		margin: 50px 0px 20px 0px;
+	}
+	& h2 {
+		font: 2em $titulo;
+		color: $cor_cinza;
+		margin-bottom: 20px;
+	}
+	& p {
+		font: 1.2em $texto;
+		text-align: justify;
+		margin: 10px 0;
+	}
+}
+.img {
+	width: 100%;
+	background: $cor_branco;
+	padding: 5px 5px 20px 5px;
+	box-shadow: 1px 1px 2px $cor_cinza;
+	transform: rotate(-1deg);
+}
+/* --- IDS --- */
+#banner {
+	width: 100%;
+	padding-top: 70px; 
+	& img {
+		width: 100%;
+	}
+}
+#filmes {
+	width: 100%;
+	background: url(../images/bg.jpg) fixed;
+	padding: 50px 0px;
+	float: left;
+	& h2 {
+		text-transform: uppercase;
+		color: $cor_cinza;
+		margin-bottom: 20px;
+	}
+	& .filme {
+		width: 33%;
+		float: left;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+	& img {
+		filter: sepia(80%);
+		transition:  $transicao;
+		&:hover {
+			filter: sepia(0%);
+		}
+	}
+}
+#menu {
+	border: 1px solid $cor_branco;
+	padding: 5px 10px;
+	color: $cor_branco;
+	font-size: 1.8em;
+	border-radius: 4px;
+	float: right;
+	display: none;
+}
+/* --- MEDIA QUERIES --- */
+@media (max-width: 320px){
+	#menu {
+		display: block;
+	}
+	nav{
+		display: none;
+		background: $cor_preto;
+		width: 100%;
+		float: left;
+		position: relative;
+		z-index: 100;
+		& ul li {
+			display: block;
+			width: 100%;
+			border-bottom: 1px solid $cor_branco;
+			& a {
+				float: left;
+				padding: 10px;
+				width: 100%;
+				border-bottom: 1px solid $cor_branco;
+			}
+		}
+	}
+	.texto {
+		top: 80px;
+		& p{
+			font-size: 1em;
+		}
+		& h1 {
+			font-size: 1.5em;
+		}
+	}
+	.container {
+		width: 320px;
+		padding: 10px;
+		box-sizing: border-box;
+		& h1{
+			font-size: 1.5em;
+		}
+		& h2 {
+			font-size: 1em;
+		}
+		& p {
+			font-size: 1em;
+		}
+	}
+	.filme {
+		width: 100% !important;
+		& img {
+			transform: rotate(0deg);
+		}
+	}
+}
+@media (min-width: 321px) and (max-width: 480px){
+
+}

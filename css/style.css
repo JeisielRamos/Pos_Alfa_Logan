@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans");
+/* --- TAGS --- */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  background: linear-gradient(to top, #FFF, #CCC) fixed; }
+
+.no-cssgradients body {
+  background: #333; }
+
+header {
+  background: #000;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1000; }
+  header nav {
+    float: right;
+    margin-top: 13px; }
+    header nav ul li {
+      display: inline;
+      list-style: none; }
+      header nav ul li a {
+        font: 1.2em "Open Sans", Tahoma, Verdana;
+        color: #FFF;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-left: 13px;
+        transition: all 0.5s; }
+        header nav ul li a:hover {
+          color: #F00;
+          text-decoration: none; }
+
+footer {
+  width: 100%;
+  background: #000;
+  padding: 20px 0px; }
+  footer a {
+    font-size: 2.5em;
+    color: #CCC;
+    text-decoration: none;
+    transition: all 0.5s; }
+    footer a:hover {
+      color: #F00; }
+  footer p {
+    font: 1.2em "Open Sans", Tahoma, Verdana;
+    color: #FFF; }
+
+/* --- CLASS --- */
+.img {
+  width: 85%;
+  background: #FFF;
+  padding: 10px;
+  box-shadow: 2px 2px 2px #CCC;
+  transform: rotate(-2deg); }
+
+.col1 {
+  width: 25%; }
+
+.col2 {
+  width: 70%; }
+
+.top {
+  padding-top: 70px; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.center {
+  text-align: center; }
+
+.clear {
+  clear: both; }
+
+.texto {
+  position: absolute;
+  top: 200px;
+  color: #FFF;
+  font-family: "Fjalla One", Arial;
+  left: 30px;
+  text-shadow: 2px 2px 1px #000; }
+  .texto p {
+    font-size: 1.4em;
+    margin-bottom: 10px; }
+  .texto h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    margin-bottom: 10px; }
+  .texto .btn {
+    border: 1px solid #FFF;
+    padding: 5px;
+    transition: all 0.5s;
+    text-shadow: 0 0 0 transparent;
+    color: #FFF;
+    text-decoration: none; }
+    .texto .btn:hover {
+      background: #FFF;
+      color: #000; }
+
+.container {
+  width: 1000px;
+  margin: auto; }
+  .container h1 {
+    font: 3em "Fjalla One", Arial;
+    margin: 50px 0px 20px 0px; }
+  .container h2 {
+    font: 2em "Fjalla One", Arial;
+    color: #CCC;
+    margin-bottom: 20px; }
+  .container p {
+    font: 1.2em "Open Sans", Tahoma, Verdana;
+    text-align: justify;
+    margin: 10px 0; }
+
+.img {
+  width: 100%;
+  background: #FFF;
+  padding: 5px 5px 20px 5px;
+  box-shadow: 1px 1px 2px #CCC;
+  transform: rotate(-1deg); }
+
+/* --- IDS --- */
+#banner {
+  width: 100%;
+  padding-top: 70px; }
+  #banner img {
+    width: 100%; }
+
+#filmes {
+  width: 100%;
+  background: url(../images/bg.jpg) fixed;
+  padding: 50px 0px;
+  float: left; }
+  #filmes h2 {
+    text-transform: uppercase;
+    color: #CCC;
+    margin-bottom: 20px; }
+  #filmes .filme {
+    width: 33%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box; }
+  #filmes img {
+    filter: sepia(80%);
+    transition: all 0.5s; }
+    #filmes img:hover {
+      filter: sepia(0%); }
+
+#menu {
+  border: 1px solid #FFF;
+  padding: 5px 10px;
+  color: #FFF;
+  font-size: 1.8em;
+  border-radius: 4px;
+  float: right;
+  display: none; }
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 320px) {
+  #menu {
+    display: block; }
+
+  nav {
+    display: none;
+    background: #000;
+    width: 100%;
+    float: left;
+    position: relative;
+    z-index: 100; }
+    nav ul li {
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid #FFF; }
+      nav ul li a {
+        float: left;
+        padding: 10px;
+        width: 100%;
+        border-bottom: 1px solid #FFF; }
+
+  .texto {
+    top: 80px; }
+    .texto p {
+      font-size: 1em; }
+    .texto h1 {
+      font-size: 1.5em; }
+
+  .container {
+    width: 320px;
+    padding: 10px;
+    box-sizing: border-box; }
+    .container h1 {
+      font-size: 1.5em; }
+    .container h2 {
+      font-size: 1em; }
+    .container p {
+      font-size: 1em; }
+
+  .filme {
+    width: 100% !important; }
+    .filme img {
+      transform: rotate(0deg); } }
+
+/*# sourceMappingURL=style.css.map */
